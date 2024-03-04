@@ -287,28 +287,6 @@
 			</div>
 		</div>
 
-		<div class="section no-pad-bot" v-if="translationType !== 'files'">
-			<div class="container">
-				<div class="row center">
-					<div class="col s12 m12">
-
-					<div class="row center code-row-wrapper">
-						<div class="col s12 m12 l6 left-align code-box">
-							<p class="mb-0">{{ _h("Request") }}</p>
-							<pre class="code mt-0"><code class="language-javascript" v-html="$options.filters.highlight(requestCode)">
-							</code></pre>
-						</div>
-						<div class="col s12 m12 l6 left-align code-box">
-							<p class="mb-0">{{ _h("Response") }}</p>
-							<pre class="code mt-0"><code class="language-javascript" v-html="$options.filters.highlight(output)">
-							</code></pre>
-						</div>
-					</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
 		{% if web_version %}
 		<div class="section no-pad-bot">
 			<div class="container">
@@ -331,15 +309,6 @@
 	</main>
 
 	<footer class="page-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col l12 s12">
-					<h5 class="white-text">{{ _h("LibreTranslate") }}</h5>
-					<p class="grey-text text-lighten-4">{{ _h("Free and Open Source Machine Translation API") }}</p>
-					<p>{{ _h("License:") }} <a class="grey-text text-lighten-4" href="https://www.gnu.org/licenses/agpl-3.0.en.html" rel="noopener noreferrer">AGPLv3</a></p>
-				</div>
-			</div>
-		</div>
 		<div class="footer-copyright center">
 			<p class="white-text">
 				{{ _h("Made with %(heart)s by %(contributors)s and powered by %(engine)s", heart='❤', contributors='<a class="white-text" href="https://github.com/LibreTranslate/LibreTranslate/graphs/contributors" rel="noopener noreferrer">%s</a>' % _h("%(libretranslate)s Contributors", libretranslate="LibreTranslate"), engine='<a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>') }}
