@@ -28,5 +28,3 @@ volumes:
 #   libretranslate_api_keys:
 
    libretranslate_models:
-labels:
-      - "traefik.http.routers.translate.rule=Host(`translate.amma.be`)"
