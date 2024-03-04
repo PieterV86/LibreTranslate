@@ -64,14 +64,6 @@
 				</a>
 				<ul id="nav" class="right hide-on-med-and-down top-nav position-relative">
 					{% set menulinks %}
-					<li><a href="{{ swagger_url }}">{{ _h("API Docs") }}</a></li>
-					{% if get_api_key_link %}
-					<li><a href="{{ get_api_key_link }}">{{ _h("Get API Key") }}</a></li>
-					{% endif %}
-					<li><a href="https://github.com/LibreTranslate/LibreTranslate" rel="noopener noreferrer">{{ _h("GitHub") }}</a></li>
-					{% if api_keys %}
-					<li><a class="noline" href="javascript:setApiKey()" title="{{ _h('Set API Key') }}" aria-label="{{ _h('Set API Key') }}"><i class="material-icons">vpn_key</i></a></li>
-					{% endif %}
 					<li class="change-language"><a class="noline" href="javascript:void(0)" title="{{ _h('Change language') }}"><i class="material-icons">language</i></a>
 					</li>
 					<li class="locale-panel">
@@ -311,7 +303,7 @@
 	<footer class="page-footer">
 		<div class="footer-copyright center">
 			<p class="white-text">
-				{{ _h("Made with %(heart)s by %(contributors)s and powered by %(engine)s", heart='❤', contributors='<a class="white-text" href="https://github.com/LibreTranslate/LibreTranslate/graphs/contributors" rel="noopener noreferrer">%s</a>' % _h("%(libretranslate)s Contributors", libretranslate="LibreTranslate"), engine='<a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>') }}
+				{{ _h("powered by %(engine)s", engine='<a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>') }}
 			</p>
 		</div>
 	</footer>
