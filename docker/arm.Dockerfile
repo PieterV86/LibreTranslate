@@ -1,4 +1,4 @@
-FROM arm64v8/python:3.10.10-slim-bullseye as builder
+FROM arm64v8/python:3.11.9-slim-bullseye as builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ RUN ./venv/bin/pip install Babel==2.12.1 && ./venv/bin/python scripts/compile_lo
   && ./venv/bin/pip install . \
   && ./venv/bin/pip cache purge
 
-FROM arm64v8/python:3.10.10-slim-bullseye
+FROM arm64v8/python:3.11.9-slim-bullseye
 
 ARG with_models=false
 ARG models=""
@@ -40,4 +40,4 @@ RUN if [ "$with_models" = "true" ]; then  \
   fi
 
 EXPOSE 5000
-ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "0.0.0.0" ]
+ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "*" ]

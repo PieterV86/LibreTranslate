@@ -162,6 +162,13 @@ def get_args():
         help="Set available languages (ar,de,en,es,fr,ga,hi,it,ja,ko,pt,ru,zh)",
     )
     parser.add_argument(
+        "--alternatives-limit",
+        default=DEFARGS['ALTERNATIVES_LIMIT'],
+        type=int,
+        metavar="<maximum number of alternatives translations>",
+        help="Set the maximum number of supported alternative translations (%(default)s)",
+    )
+    parser.add_argument(
         "--threads",
         default=DEFARGS['THREADS'],
         type=int,
@@ -215,6 +222,10 @@ def main():
     if '--wsgi' in sys.argv:
         return app
     else:
+        if args.debug and args.host == "*":
+            # '::' will listen on both ipv6 and ipv4
+            args.host = "::"
+
         if args.debug:
             app.run(host=args.host, port=args.port)
         else:

@@ -33,7 +33,7 @@ classifiers = [
 dynamic = ["version"]
 
 dependencies = [
-    "argostranslate ==1.9.1",
+    "argostranslate ==1.9.6",
     "Flask ==2.2.5",
     "flask-swagger ==0.2.14",
     "flask-swagger-ui ==4.11.1",
@@ -81,6 +81,8 @@ Documentation = "https://github.com/LibreTranslate/LibreTranslate"
 Tracker = "https://github.com/LibreTranslate/LibreTranslate/issues"
 History = "https://github.com/LibreTranslate/LibreTranslate/releases"
 
+[tool.hatch.build]
+artifacts = ["*.mo"]
 
 # ENVIRONMENTS AND SCRIPTS
 [tool.hatch.envs.default]
